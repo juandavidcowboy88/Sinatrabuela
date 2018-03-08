@@ -2,5 +2,5 @@ require 'sinatra'
 
 @abuelita
 get '/'do
-request.user_agent
+request.env['HTTP_PERMISO'] == 'soy-un-token-secreto' ? 'Si lo logramos!' : 'Sin Permiso'
 end
